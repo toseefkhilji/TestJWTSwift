@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - Base64 (1.1.2)
+  - DocuSignESign (3.0.1):
+    - AFNetworking (~> 3.1)
+    - ISO8601 (~> 0.6)
+    - JSONModel (~> 1.4)
+    - JWT (~> 3.0.0-beta)
+  - ISO8601 (0.6.0)
+  - JSONModel (1.7.0)
+  - JWT (3.0.0-beta.8):
+    - Base64 (~> 1.1.2)
+
+DEPENDENCIES:
+  - DocuSignESign (~> 3.0.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Base64
+    - DocuSignESign
+    - ISO8601
+    - JSONModel
+    - JWT
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
+  DocuSignESign: 354c05d9662736f06b9720b26cbb6f70f0c2aaa8
+  ISO8601: d3ea3ba9b752820cf92c6b47a9ee327e9f0e13fc
+  JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
+  JWT: 6e7ec473b6febcb7498affc84f0e75d393914411
+
+PODFILE CHECKSUM: 2572241ddbda3299cf0c64b2a2a3cdb474739254
+
+COCOAPODS: 1.5.0

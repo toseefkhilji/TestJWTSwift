@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  TestJWTSwift
@@ -7,19 +8,28 @@
 //
 
 import UIKit
-
+import DocuSignESign
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let docApi = DSApiClient(baseURL: URL(string: DSConstatns.host))
+        docApi.configure_jwt_authorization_flow(DSConstatns.integrationKey, userId: DSConstatns.userId, oauthBasePath: DSConstatns.outhBasePath, privateKeyFilename: DSConstatns.privateKeyName, expiresIn: 3600)
+
+        let authAPI = DSAuthenticationApi(apiClient: docApi)
+
+        let loginOptions = DSAuthenticationApi_LoginOptions()
+        loginOptions.loginSettings = "none"
+        loginOptions.apiPassword = "true"
+        loginOptions.includeAccountIdGuid = "true"
+
+        authAPI?.login(withApiPassword: loginOptions, completionHandler: { (loginInfo, error) in
+            if let logInAccount: DSLoginAccount = loginInfo?.loginAccounts.first as? DSLoginAccount {
+                debugPrint(logInAccount)
+            } else {
+                debugPrint(error)
+            }
+        })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
